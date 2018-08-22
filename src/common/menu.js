@@ -1,21 +1,5 @@
 import { isUrl } from '../utils/utils';
 
-// const menuData = [
-//   {
-//     name: '列表页',
-//     icon: 'table',
-//     path: 'list',
-//     children: [
-//       {
-//         name: '查询表格',
-//         path: 'table-list',
-//       }
-//     ]
-//   },
-
-
-// ];
-
 const menuData = [
   {
     name: 'System',
@@ -28,79 +12,113 @@ const menuData = [
       }
     ]
   },
-  // {
-  //   name: 'Company Manage',
-  //   icon: 'table',
-  //   path: '/company',
-  //   children: [
-  //     {
-  //       name: 'Overview',
-  //       path: '/overview',
-  //     }
-  //   ]
-  // },
-  // {
-  //   name: 'Property Manage',
-  //   icon: 'table',
-  //   path: '/property',
-  //   children: [
-  //     {
-  //       name: 'Overview',
-  //       path: '/overview',
-  //     }
-  //   ]
-  // },
-  // {
-  //   name: 'Campaign Manage',
-  //   icon: 'table',
-  //   path: '/campaign',
-  //   children: [
-  //     {
-  //       name: 'Overview',
-  //       path: '/overview',
-  //     }
-  //   ]
-  // },  {
-  //   name: 'Translation Manage',
-  //   icon: 'table',
-  //   path: '/translation',
-  //   children: [
-  //     {
-  //       name: 'Overview',
-  //       path: '/overview',
-  //     }
-  //   ]
-  // },  {
-  //   name: 'Functions',
-  //   icon: 'table',
-  //   path: '/functions',
-  //   children: [
-  //     {
-  //       name: 'Overview',
-  //       path: '/overview',
-  //     }
-  //   ]
-  // },  {
-  //   name: 'Task & Service',
-  //   icon: 'table',
-  //   path: '/task',
-  //   children: [
-  //     {
-  //       name: 'Overview',
-  //       path: '/overview',
-  //     }
-  //   ]
-  // },  {
-  //   name: 'Wechat Manage',
-  //   icon: 'table',
-  //   path: '/wechat',
-  //   children: [
-  //     {
-  //       name: 'Overview',
-  //       path: '/overview',
-  //     }
-  //   ]
-  // }
+  {
+    name: 'Company Manage',
+    icon: 'table',
+    path: 'company',
+    children: [
+      {
+        name: 'Company',
+        path: 'list',
+      },
+      {
+        name: 'Agent Manage',
+        path: 'agent',
+        children:[
+          {
+            name: 'Agents',
+            path: 'agents',
+          },
+          {
+            name: 'Credits',
+            path: 'credits',
+          },
+          {
+            name: 'Password Requests',
+            path: 'pwdreqs',
+          }
+        ]
+      }
+    ]
+  },
+  {
+    name: 'Property Manage',
+    icon: 'table',
+    path: 'property',
+    children: [
+      {
+        name: 'Property',
+        path: 'list',
+      },
+      {
+        name: 'Settings',
+        path:'settings',
+        children:[
+          {
+            name: 'Classification',
+            path: 'classification',
+          },
+          {
+            name: 'Type',
+            path: 'type',
+          },
+          {
+            name: 'Area',
+            path: 'area',
+          },
+          {
+            name: 'Tunure Type',
+            path: 'tunure',
+          }
+        ]
+      }
+    ]
+  },
+  {
+    name: 'Campaign Manage',
+    icon: 'table',
+    path: 'campaign',
+    children: [
+      {
+        name: 'Campaign',
+        path: 'list',
+      },
+      {
+        name: 'Package',
+        path: 'package',
+      },
+      {
+        name: 'Invoice Manage',
+        path: 'invoice',
+        children:[
+          {
+            name: 'Package',
+            path: 'package',
+          },  
+        ]
+      }
+    ]
+  }, 
+  {
+    name: 'Translation Manage',
+    icon: 'table',
+    path: 'translation',
+  }, 
+  {
+    name: 'Functions',
+    icon: 'table',
+    path: 'functions',
+  },
+  {
+    name: 'Task & Service',
+    icon: 'table',
+    path: 'task',
+  }, 
+  {
+    name: 'Wechat Manage',
+    icon: 'table',
+    path: 'wechat',
+  }
 ];
 
 function formatter(data, parentPath = '/', parentAuthority) {
