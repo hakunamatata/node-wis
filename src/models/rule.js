@@ -13,6 +13,8 @@ export default {
   effects: {
     *fetch({ payload }, { call, put }) {
       const response = yield call(queryRule, payload);
+      console.log('fetch - save: ', payload);
+
       yield put({
         type: 'save',
         payload: response,
@@ -38,6 +40,7 @@ export default {
 
   reducers: {
     save(state, action) {
+
       return {
         ...state,
         data: action.payload,

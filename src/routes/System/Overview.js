@@ -1,10 +1,26 @@
 import React, { PureComponent, Fragment } from 'react';
+import { connect } from 'dva';
 import { Row, Col, Avatar, Card } from 'antd';
 import PageHeaderLayout from '../../layouts/PageHeaderLayout';
 import styles from './Overview.less';
+
+
+@connect(({overview})=>({
+  ...overview
+}))
 export default class Overview extends PureComponent{
-  
+
+  componentDidMount() {
+    const { dispatch } = this.props;
+    dispatch({
+      type: 'overview/fetch',
+    });
+  }
+
+
   render(){
+    const {data} = this.props
+    console.log(data);
     const pageHeaderContent = (
       <div className={styles.pageHeaderContent}>
         <div className={styles.avatar}>
