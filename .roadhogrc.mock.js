@@ -6,7 +6,7 @@ import { getProfileBasicData } from './mock/profile';
 import { getProfileAdvancedData } from './mock/profile';
 import { getNotices } from './mock/notices';
 import { format, delay } from 'roadhog-api-doc';
-import {getbrief} from './mock/overview'
+import { getbrief } from './mock/overview';
 
 // 是否禁用代理
 const noProxy = process.env.NO_PROXY === 'true';
@@ -137,7 +137,15 @@ const proxy = {
     });
   },
 
-  'GET /api/overview/taskbrief' :getbrief
+  'GET /api/overview/taskbrief': getbrief,
+
+  'GET /api/overview/operator': (req, res) => {
+    res.json({
+      avatar: 'https://gw.alipayobjects.com/zos/rmsportal/nxkuOJlFJuAUhzlMTCEe.png',
+      greeting: 'Morning Zhanghe，wish you a good day!',
+      tag: 'Here is the overview of works today.',
+    });
+  },
 };
 
 export default (noProxy ? {} : delay(proxy, 1000));
